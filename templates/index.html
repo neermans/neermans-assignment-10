@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Image Search</h1>
+    </header>
+    <main>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="query_type">Query Type:</label>
+            <select name="query_type" id="query_type">
+                <option value="text">Text Query</option>
+                <option value="image">Image Query</option>
+                <option value="both">Combined Query</option>
+            </select>
+            <br>
+            <label for="text_query">Text Query:</label>
+            <input type="text" name="text_query" id="text_query">
+            <br>
+            <label for="image_query">Image Query:</label>
+            <input type="file" name="image_query" id="image_query">
+            <br>
+            <label for="weight">Weight (for combined query):</label>
+            <input type="number" name="weight" step="0.1" min="0" max="1" value="0.5">
+            <br>
+            <label for="use_pca">Use PCA Embeddings:</label>
+            <input type="checkbox" name="use_pca" id="use_pca">
+            <br>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if results %}
+            <div class="results">
+                <h2>Search Results:</h2>
+                <ul>
+                    {% for file_name, score in results %}
+                        <li>
+                            <img src="/{{ file_name }}" alt="Result Image">
+                            <p>Similarity Score: {{ score }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Image Search App</p>
+    </footer>
+</body>
+</html>

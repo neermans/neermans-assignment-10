@@ -1,0 +1,156 @@
+/* static/mini_fb/styles.css */
+/*this is my css file for the mini_fb app*/
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(to bottom, #ffcccc, #ffc2d1, #ffb3d9); /* Pink ombre background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    color: #fff; 
+}
+
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px; 
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+input[type="text"] {
+    width: 80%;
+    padding: 15px;
+    border: 2px solid #ffdfba;
+    border-radius: 15px;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+input[type="text"]::placeholder {
+    color: #666;
+}
+
+
+button, .btn-search {
+    background-color: transparent; 
+    color: #fff;
+    border: none;
+    text-decoration: underline; 
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+button:hover, .btn-search:hover {
+    color: #ff4b3a; 
+}
+
+
+#results {
+    display: none;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+
+#results h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+
+#results div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffe3d3;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #ff6f61;
+    transition: background-color 0.3s ease;
+}
+
+#results div img {
+    max-width: 80%;
+    height: auto; 
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#results div p {
+    color: #333;
+    font-size: 1rem;
+    max-width: 600px;
+}
+
+#results div:hover {
+    background-color: #ffdfba;
+}
+
+
+canvas {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+#similarity-chart {
+    display: none;
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+
+    .btn-search {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
